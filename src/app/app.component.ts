@@ -9,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'certification.upb.web';
+  public title:string = 'certification.upb.web';
+  public numberToSum:number = 11;
 }
