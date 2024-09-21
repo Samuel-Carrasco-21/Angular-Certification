@@ -14,6 +14,8 @@ export class AppComponent {
   public numberOne:number = 12;
   public numberTwo:number = 10;
 
+
+
   constructor(){
     console.log('SUM: ', this.sum(this.numberOne, this.numberTwo));
     console.log('SUBSTRACT: ', this.substract(this.numberOne, this.numberTwo));
@@ -25,5 +27,12 @@ export class AppComponent {
 
   private substract(num1:number, num2: number): number{
     return num1 - num2;
+  }
+
+  public getArray(): void{
+    const persons: number[] = [1, 2, 3, 4, 5].filter(person => person % 2 === 0);
+    for (let index = 0; index < persons.length; index++) {
+      console.log('person = ', persons[index]);
+    }
   }
 }
