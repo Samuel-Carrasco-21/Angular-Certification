@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserCardComponent } from "./user-card/user-card.component";
 
 interface IPerson{
   name: string;
@@ -10,10 +11,11 @@ interface IPerson{
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, UserCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   public title:string = 'certification.upb.web';
   public numberToSum:number = 11;
@@ -31,6 +33,10 @@ export class AppComponent {
   private students:number[] = [1, 2, 3, 4, 5, 6];
   private parents:number[] = [7, 8, 9, 10];
 
+  private var1 = 0;
+  private var2 = null;
+  private var3 = 'hola';
+
   constructor(){
     const { name, age } = this.person;
     console.log('Destructuring object: { name:', name, ', age:', age, '}');
@@ -39,6 +45,9 @@ export class AppComponent {
     console.log('Spreed Operator: ', students_and_parents);
 
     console.log('Sum of many numbers (Rest Operator): ', this.sumManyNumbers(10, ...students_and_parents));
+
+    console.log('Nullish Coalesing: ', this.var2 ?? this.var3);
+    console.log('OR: ', this.var2 || this.var1);
 
     // console.log('--- Array Operators ---');
     // console.log('SUM: ', this.sum(this.numberOne, this.numberTwo));
