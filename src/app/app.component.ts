@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserCardComponent } from "./user-card/user-card.component";
+import { CalculatorComponent } from './calculator/calculator.component';
+import { HistoryComponent } from "./history/history.component";
 
 interface IPerson{
   name: string;
@@ -8,10 +10,15 @@ interface IPerson{
   age: number;
 }
 
+interface IResultCalculator{
+  operation: string;
+  result: number;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponent, HistoryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -37,8 +44,15 @@ export class AppComponent {
   private var2 = null;
   private var3 = 'hola';
 
+  public resultCalculator: IResultCalculator = {
+    operation: '',
+    result: 0
+  };
+
+  public history: IResultCalculator[] = [];
+
   constructor(){
-    const { name, age } = this.person;
+    // const { name, age } = this.person;
     // console.log('Destructuring object: { name:', name, ', age:', age, '}');
 
     // const students_and_parents:number[] = [...this.students, ...this.parents];
@@ -82,5 +96,15 @@ export class AppComponent {
 
   public recieveData(dataChild: string){
     console.log(dataChild);
+  }
+
+  public recieveCalculatorData(resultCalculator: IResultCalculator){
+    this.resultCalculator = {...resultCalculator};
+    if (this.resultCalculator.operation!=='reset') {
+      this.history.push(this.resultCalculator);
+    } else {
+      this.history = [];
+    }
+
   }
 }

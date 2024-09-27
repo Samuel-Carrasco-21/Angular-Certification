@@ -1,0 +1,13 @@
+.result-container {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #343a40;
+}
+
+.calculator-history-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,0 +1,8 @@
+<div class="history-container">
+  <h3>Historial de Operaciones</h3>
+  <ul *ngIf="history.length!==0">
+    <li *ngFor="let resultGotten of history; let i = index">
+      {{i + 1}}. {{ resultGotten.operation }}: {{ resultGotten.result }}
+    </li>
+  </ul>
+</div>

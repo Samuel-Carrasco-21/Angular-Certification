@@ -5,9 +5,13 @@
 <!-- <p>Substract of {{ numberOne }} + {{ numberTwo }} = {{ substract(numberOne, numberTwo) }}</p> -->
 <p>FOR Even Persons: {{ getArray() }}</p>
 
-<user-card
+<!-- <user-card
   [name]="'José Carrasco'"
   [email]="'jsce2021@gmail.com'"
   (sendData)="recieveData($event)"
->
-</user-card>
+></user-card> -->
+<div class="calculator-history-container">
+  <app-calculator (sendData)="recieveCalculatorData($event)"></app-calculator>
+  <app-history [history]="history"></app-history>
+</div>
+<p class="result-container">Result Gotten: {{this.resultCalculator.result}}</p>

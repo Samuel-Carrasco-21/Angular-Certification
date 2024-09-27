@@ -1,0 +1,12 @@
+<div class="calculator-container">
+  <div class="calculator-inputs">
+    <input type="text" placeholder="number 1" [(ngModel)]="number1" />
+    <input type="text" placeholder="number 2" [(ngModel)]="number2" />
+  </div>
+
+  <div class="calculator-buttons">
+    <button class="sum-button" (click)="sum()">Sumar</button>
+    <button class="multiply-button" (click)="multiply()">Multiplicar</button>
+    <button class="reset-button" (click)="reset()">Resetear</button>
+  </div>
+</div>
