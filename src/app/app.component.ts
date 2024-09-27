@@ -39,15 +39,15 @@ export class AppComponent {
 
   constructor(){
     const { name, age } = this.person;
-    console.log('Destructuring object: { name:', name, ', age:', age, '}');
+    // console.log('Destructuring object: { name:', name, ', age:', age, '}');
 
-    const students_and_parents:number[] = [...this.students, ...this.parents];
-    console.log('Spreed Operator: ', students_and_parents);
+    // const students_and_parents:number[] = [...this.students, ...this.parents];
+    // console.log('Spreed Operator: ', students_and_parents);
 
-    console.log('Sum of many numbers (Rest Operator): ', this.sumManyNumbers(10, ...students_and_parents));
+    // console.log('Sum of many numbers (Rest Operator): ', this.sumManyNumbers(10, ...students_and_parents));
 
-    console.log('Nullish Coalesing: ', this.var2 ?? this.var3);
-    console.log('OR: ', this.var2 || this.var1);
+    // console.log('Nullish Coalesing: ', this.var2 ?? this.var3);
+    // console.log('OR: ', this.var2 || this.var1);
 
     // console.log('--- Array Operators ---');
     // console.log('SUM: ', this.sum(this.numberOne, this.numberTwo));
@@ -78,5 +78,9 @@ export class AppComponent {
     for (let person of persons) {
       console.log('person = ', person);
     }
+  }
+
+  public recieveData(dataChild: string){
+    console.log(dataChild);
   }
 }

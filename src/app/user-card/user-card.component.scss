@@ -1,0 +1,30 @@
+.user-card{
+  font-family: 'Courier New', Courier, monospace;
+  border: 0.5rem solid red;
+  border-radius: 3rem;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.button-user-card{
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.6rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  background-color: rgb(227, 31, 227);
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+  transition: background-color 0.3s ease;
+}
+
+.button-user-card:hover{
+  background-color: rgb(255, 84, 255);
+}
+
+.button-user-card:active{
+  background-color: rgb(185, 18, 185);
+}
+
