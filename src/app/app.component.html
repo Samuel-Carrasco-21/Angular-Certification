@@ -5,13 +5,22 @@
 <!-- <p>Substract of {{ numberOne }} + {{ numberTwo }} = {{ substract(numberOne, numberTwo) }}</p> -->
 <p>FOR Even Persons: {{ getArray() }}</p>
 
-<!-- <user-card
+<user-card
   [name]="'José Carrasco'"
   [email]="'jsce2021@gmail.com'"
   (sendData)="recieveData($event)"
-></user-card> -->
+>
+  <p>hola mundo, envio de un componente del padre al hijo</p>
+</user-card>
+
 <div class="calculator-history-container">
   <app-calculator (sendData)="recieveCalculatorData($event)"></app-calculator>
   <app-history [history]="history"></app-history>
 </div>
 <p class="result-container">Result Gotten: {{this.resultCalculator.result}}</p>
+
+<p *ngIf="ngConditionExample">Forma antigua del ngIf</p>
+
+@if (ngConditionExample) {
+  <p>Forma moderna del ngIf</p>
+}
