@@ -41,9 +41,9 @@ export class AppComponent {
   private students:number[] = [1, 2, 3, 4, 5, 6];
   private parents:number[] = [7, 8, 9, 10];
 
-  private var1 = 0;
-  private var2 = null;
-  private var3 = 'hola';
+  public var1 = 0;
+  public var2 = null;
+  public var3 = 'hola';
 
   public resultCalculator: IResultCalculator = {
     operation: '',

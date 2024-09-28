@@ -11,3 +11,17 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.ngElementStyle{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+.oldNgElement{
+  background-color: red;
+}
+
+.newNgElement{
+  background-color: blue;
+}
