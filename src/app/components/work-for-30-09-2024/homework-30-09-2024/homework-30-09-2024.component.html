@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="person-list">
+    @for (person of personsList; track $index) {
+      <app-person-card
+        [person]="person">
+      </app-person-card>
+    }
+  </div>
+
+  <div class="info-section">
+    <app-info-indicator [text]="'Total persons female'" [numValue]="countByGender(genderType.FEMALE)"></app-info-indicator>
+    <app-info-indicator [text]="'Total persons male'" [numValue]="countByGender(genderType.MALE)"></app-info-indicator>
+    <app-info-indicator [text]="'Total persons other'" [numValue]="countByGender(genderType.OTHER)"></app-info-indicator>
+
+    <div class="discount-indicator">
+      <p>Si la persona es mayor a 18 años, tiene descuento</p>
+      <app-info-indicator [text]="'Persons with discount'" [numValue]="countDiscounts()"></app-info-indicator>
+    </div>
+
+    <app-delete-button
+      [text]="'Borrar personas con descuento'"
+      [bgColor]="'#f8b400'"
+      [personsList]="personsList"
+      (sendData)="getPersonsListChanged($event)"
+    >
+    </app-delete-button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<h1>{{title}}</h1>
+<h2>Hello World {{ 2 + numberToSum }}</h2>
+<p>Sum of {{ numberOne }} + {{ numberTwo }} = {{ sum(numberOne, numberTwo) }}</p>
+<!-- gives error, because it's a private function -->
+<!-- <p>Substract of {{ numberOne }} + {{ numberTwo }} = {{ substract(numberOne, numberTwo) }}</p> -->
+<p>FOR Even Persons: {{ getArray() }}</p>
+
+<user-card
+  [name]="'José Carrasco'"
+  [email]="'jsce2021@gmail.com'"
+  (sendData)="recieveData($event)"
+>
+  <p>hola mundo, envio de un componente del padre al hijo</p>
+</user-card>
+
+<div class="calculator-history-container">
+  <app-calculator (sendData)="recieveCalculatorData($event)"></app-calculator>
+  <app-history [history]="history"></app-history>
+</div>
+<p class="result-container">Result Gotten: {{this.resultCalculator.result}}</p>
+
+<p *ngIf="ngConditionExample; else elseold">Forma antigua del ngIf</p>
+<ng-template #elseold>
+  <p>forma antigua de imprimir un componente si la condición es falsa</p>
+</ng-template>
+
+@if (ngConditionExample) {
+  <p>Forma moderna del ngIf</p>
+} @else {
+  <p>Forma moderna de imprimir un componente si una condicion no se cumple</p>
+}
+
+<p class="ngElementStyle oldNgElement" *ngFor="let item of ['a', 'b', 'c', 'd', 'e']; let i = index;">
+  Forma antigua del ngFor, elemento {{i}}. {{item}}
+</p>
+
+@for (item of ['a', 'b', 'c', 'd', 'e']; track item; let i=$index) {
+  <p class="ngElementStyle newNgElement">
+    Forma moderna del ngFor, elemento {{i}}. {{item}}
+  </p>
+}
+
+<div class="ngElementStyle oldNgElement" [ngSwitch]="var1">
+  <p>Forma antigua del ngSwitch:</p>
+  <p *ngSwitchCase="0">Caso Uno</p>
+  <p *ngSwitchCase="1">Caso Dos</p>
+  <p *ngSwitchDefault>Caso por defecto</p>
+</div>
+<div class="ngElementStyle newNgElement">
+  <p>Forma moderna del ngSwitch:</p>
+  @switch (var1) {
+    @case (1) {
+      <p>Caso Uno</p>
+    }
+    @case (2) {
+      <p>Caso Dos</p>
+    }
+    @default {
+      <p>Caso por defecto</p>
+    }
+  }
+</div>

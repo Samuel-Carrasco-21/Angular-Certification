@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="header">
+    <h2>{{ person.name }}</h2>
+    @if (person.hasDiscount) {
+      <span class="discount">Discount</span>
+    }
+  </div>
+  <div class="details">
+    <p><strong>Gender:</strong> {{ showGender() }}</p>
+    <p><strong>Age:</strong> {{ person.age }}</p>
+  </div>
+</div>
