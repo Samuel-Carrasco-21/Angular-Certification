@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, DoCheck, Input } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,9 +8,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
 })
-export class UserCardComponent implements DoCheck, AfterContentInit{
-  @Input() textName:string = '';
+export class UserCardComponent implements DoCheck, AfterContentInit, AfterViewInit {
+  @Input() textName: string = '';
+  @ViewChild('myButtonUserCard') buttonTest!: ElementRef;
   private previousTextName: string = '';
+  private numValue:number = 0;
 
   ngDoCheck(): void {
     if (this.textName !== this.previousTextName && this.textName.length <= 15) {
@@ -23,4 +25,15 @@ export class UserCardComponent implements DoCheck, AfterContentInit{
     console.log('ngAfterContentInit: components from parent was loades');
   }
 
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit::Button-Text:', this.buttonTest.nativeElement.textContent);
+    console.log('ngAfterViewInit: All Html elements have loaded at first time');
+    this.buttonTest.nativeElement.textContent = 'Default Value: 0';
+    console.log('ngAfterViewInit::Button-Text:', this.buttonTest.nativeElement.textContent);
+  }
+
+  public clickButtonAction() {
+    this.numValue++;
+    this.buttonTest.nativeElement.textContent = `Number Value: ${this.numValue}`;
+  }
 }
