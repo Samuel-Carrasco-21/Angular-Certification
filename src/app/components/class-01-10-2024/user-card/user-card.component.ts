@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, DoCheck, Input, ViewChild, ElementRef } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, Input, ViewChild, ElementRef, afterNextRender, afterRender, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,22 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss'
 })
-export class UserCardComponent implements DoCheck, AfterContentInit, AfterViewInit {
+export class UserCardComponent implements OnInit, DoCheck, AfterContentInit, AfterViewInit {
   @Input() textName: string = '';
   @ViewChild('myButtonUserCard') buttonTest!: ElementRef;
+  @ViewChild('buttonTesting', { static: false }) buttonTesting!: ElementRef
+  @ViewChild('buttonShowing', { static: true }) buttonShowing!: ElementRef
+
   private previousTextName: string = '';
-  private numValue:number = 0;
+  private numValue: number = 0;
+
+  public showButton:boolean = true;
+
+  public testingNumValue:number = 0;
+
+  ngOnInit(): void {
+    this.buttonShowing.nativeElement.textContent = 'ngOnInit: button Showing in OnInit'
+  }
 
   ngDoCheck(): void {
     if (this.textName !== this.previousTextName && this.textName.length <= 15) {
@@ -30,10 +41,19 @@ export class UserCardComponent implements DoCheck, AfterContentInit, AfterViewIn
     console.log('ngAfterViewInit: All Html elements have loaded at first time');
     this.buttonTest.nativeElement.textContent = 'Default Value: 0';
     console.log('ngAfterViewInit::Button-Text:', this.buttonTest.nativeElement.textContent);
+
+    if(this.buttonTesting){
+      this.buttonTesting.nativeElement.textContent = 'button Test in ngAfterViewInit'
+    }
   }
 
   public clickButtonAction() {
     this.numValue++;
     this.buttonTest.nativeElement.textContent = `Number Value: ${this.numValue}`;
+  }
+
+  public incrementTestingNumValue(){
+    this.testingNumValue++;
+    this.testingNumValue
   }
 }
