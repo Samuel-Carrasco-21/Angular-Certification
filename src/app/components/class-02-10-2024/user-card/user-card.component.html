@@ -1,0 +1,16 @@
+<div style="display: flex; flex-direction: column; width: 20rem; margin-bottom: 2rem;">
+  <input [(ngModel)]="textName" placeholder="Enter your name"/>
+  <ng-content></ng-content>
+  <button #myButtonUserCard (click)="clickButtonAction()">DEFAULT</button>
+  @if (textName.length > 0) {
+    <p>Hello {{textName}}! nice to meet you</p>
+  }
+</div>
+
+<div style="display: flex; flex-direction: column; width: 20rem;">
+  <button #buttonShowing (click)="showButton = !showButton">show button</button>
+
+  @if(showButton){
+      <button #buttonTesting (click)="incrementTestingNumValue()">testing button: {{testingNumValue}}</button>
+  }
+</div>
