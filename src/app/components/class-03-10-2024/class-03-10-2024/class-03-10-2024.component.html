@@ -1,3 +1,9 @@
 <app-counter></app-counter>
 <button (click)="incrementNumVal()">Increment numVal</button>
 <p>{{numVal}}</p>
+
+<div style="max-height: 30.5rem; overflow: auto;">
+  @for (person of personsList; track person; let i = $index) {
+    <app-user-card [id]="i" [person]="person"></app-user-card>
+  }
+</div>

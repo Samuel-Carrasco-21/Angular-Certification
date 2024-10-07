@@ -1,1 +1,10 @@
-<p>user-card works!</p>
+<div [ngClass]="{
+  'user-card': person.age >= 18,
+  'user-card-black': person.hasDiscount ?? person.age >= 18
+}">
+  <h1>User Card Component</h1>
+  <p>Name: {{person.name}}</p>
+  <p>Age: {{person.age}}</p>
+  <p>Gender: {{person.gender}}</p>
+  <p>Has Discount: {{person.hasDiscount ? 'Yes' : 'No'}}</p>
+</div>
