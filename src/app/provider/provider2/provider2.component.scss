@@ -1,0 +1,5 @@
+@import '../../../styles.scss';
+.provider2{
+  @extend .global-card-container, .global-text;
+  background-color: #14b8a6;
+}

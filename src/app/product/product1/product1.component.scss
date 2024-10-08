@@ -1,0 +1,5 @@
+@import '../../../styles.scss';
+.product1{
+  @extend .global-card-container, .global-text;
+  background-color: #0ea5e9;
+}

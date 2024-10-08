@@ -1,0 +1,5 @@
+@import '../../../styles.scss';
+.shared2{
+  @extend .global-card-container, .global-text;
+  background-color: #f97316;
+}
