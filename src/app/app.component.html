@@ -1,2 +1,2 @@
-<app-list-students-professors (userSelected)="infoCardsComponent.selectedUser = $event"></app-list-students-professors>
-<app-info-cards #infoCardsComponent></app-info-cards>
+<app-list-students-professors (userSelected)="user = $event"></app-list-students-professors>
+<app-info-cards [selectedUser]="user"></app-info-cards>

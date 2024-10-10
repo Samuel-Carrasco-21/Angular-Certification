@@ -11,7 +11,7 @@
     <ul>
       <ng-container *ngIf="filteredMessages.length > 0; else noMessages">
         @for (message of filteredMessages; track $index) {
-          <app-item [bgColor]="'lightgray'">{{ message }}</app-item>
+          <app-item [bgColor]="'transparent'">{{ message }}</app-item>
         }
       </ng-container>
       <ng-template #noMessages>

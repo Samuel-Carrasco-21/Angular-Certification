@@ -5,9 +5,9 @@
   (filteredItems)="filteredUsers = $event">
 </app-search>
 <app-list>
-  @for (user of filteredUsers; track user; let i = $index) {
+  @for (user of filteredUsers.length === users.length ? users : filteredUsers; track user; let i = $index) {
     <app-user-item
-      [index]="i"
+      [id]="user.id"
       [name]="user.name"
       [lastName]="user.lastName"
       [type]="user.type"

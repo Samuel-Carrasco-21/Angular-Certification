@@ -1,7 +1,13 @@
 <app-tab (tabChange)="changeTab($event)"></app-tab>
 
 <div class="info-cards">
-  <app-personal-card *ngIf="activeTab === 'personal'" [user]="selectedUser"></app-personal-card>
-  <app-geographic-card *ngIf="activeTab === 'geographic'" [user]="selectedUser"></app-geographic-card>
-  <app-messages-card *ngIf="activeTab === 'messages'" [user]="selectedUser"></app-messages-card>
+  @if (activeTab === 'personal') {
+    <app-personal-card [user]="selectedUser"></app-personal-card>
+  }
+  @if (activeTab === 'geographic') {
+    <app-geographic-card [user]="selectedUser"></app-geographic-card>
+  }
+  @if (activeTab === 'messages') {
+    <app-messages-card [user]="selectedUser"></app-messages-card>
+  }
 </div>

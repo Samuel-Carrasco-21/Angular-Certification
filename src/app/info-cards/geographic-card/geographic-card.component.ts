@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -6,6 +6,14 @@ import { User } from '../../models/user';
   templateUrl: './geographic-card.component.html',
   styleUrl: './geographic-card.component.scss'
 })
-export class GeographicCardComponent {
+export class GeographicCardComponent implements OnChanges {
   @Input() user: User | null = null;
+  public finalAddress: string = '';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.user) {
+      const { zone, street, number } = this.user.address;
+      this.finalAddress = zone + ', ' + street + ', ' + number;
+    }
+  }
 }

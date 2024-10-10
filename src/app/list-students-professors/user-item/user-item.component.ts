@@ -9,7 +9,7 @@ import { UserItemType } from '../../enums/user-item-type';
   styleUrl: './user-item.component.scss'
 })
 export class UserItemComponent implements OnInit {
-  @Input() index!: number;
+  @Input() id!: string;
   @Input() name!: string;
   @Input() lastName!: string;
   @Input() type!: UserType;
@@ -23,7 +23,7 @@ export class UserItemComponent implements OnInit {
 
   public show() {
     const action: UserItemAction = {
-      content: this.index,
+      content: this.id,
       type: UserItemType.SHOW,
     };
     this.sendData.emit(action);
@@ -31,7 +31,7 @@ export class UserItemComponent implements OnInit {
 
   public delete() {
     const action: UserItemAction = {
-      content: this.index,
+      content: this.id,
       type: UserItemType.DELETE,
     };
     this.sendData.emit(action);
