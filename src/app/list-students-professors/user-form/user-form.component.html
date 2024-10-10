@@ -1,0 +1,14 @@
+<div class="user-form">
+  <div class="user-type-selection">
+    <button (click)="userType = UserType.STUDENT">Student</button>
+    <button (click)="userType = UserType.PROFESSOR">Professor</button>
+  </div>
+
+  <input
+    type="text"
+    placeholder="Enter name and last name"
+    [(ngModel)]="name"
+  />
+
+  <button (click)="addUser()">Add</button>
+</div>

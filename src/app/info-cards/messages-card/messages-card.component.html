@@ -1,0 +1,22 @@
+<app-card [backgroundColor]="'violet'">
+  <h3>Messages</h3>
+
+  <app-search
+    [items]="user?.messages ?? []"
+    [filterFunction]="filterMessages.bind(this)"
+    (filteredItems)="onFilteredMessages($event)">
+  </app-search>
+
+  <div class="list-container">
+    <ul>
+      <ng-container *ngIf="filteredMessages.length > 0; else noMessages">
+        @for (message of filteredMessages; track $index) {
+          <app-item [bgColor]="'lightgray'">{{ message }}</app-item>
+        }
+      </ng-container>
+      <ng-template #noMessages>
+        <li>No messages found.</li>
+      </ng-template>
+    </ul>
+  </div>
+</app-card>

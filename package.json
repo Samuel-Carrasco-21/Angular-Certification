@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng --port 5100 --open",
     "start": "ng serve --port 5200 --open",
+    "component": "ng g c",
+    "module": "ng g m",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

@@ -1,0 +1,9 @@
+<app-item [bgColor]="backGroundItem">
+  <div class="user-info">
+    <span>{{ name }} {{ lastName }} - {{ type }}</span>
+  </div>
+  <div class="actions">
+    <button (click)="show()">Show</button>
+    <button (click)="delete()">Delete</button>
+  </div>
+</app-item>

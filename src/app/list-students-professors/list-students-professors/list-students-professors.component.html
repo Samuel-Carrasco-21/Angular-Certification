@@ -1,0 +1,17 @@
+<app-user-form (userAdded)="addUser($event)"></app-user-form>
+<app-search
+  [items]="users"
+  [filterFunction]="filterUsers"
+  (filteredItems)="filteredUsers = $event">
+</app-search>
+<app-list>
+  @for (user of filteredUsers; track user; let i = $index) {
+    <app-user-item
+      [index]="i"
+      [name]="user.name"
+      [lastName]="user.lastName"
+      [type]="user.type"
+      (sendData)="handleAction($event)">
+    </app-user-item>
+  }
+</app-list>

@@ -1,0 +1,6 @@
+<app-card [backgroundColor]="'orange'">
+  <h3>Geographic Information</h3>
+  <p>Address: {{ user?.address?.street || 'street' }} {{ user?.address?.number || 1000000}}</p>
+  <p>Country: {{ user?.country }}</p>
+  <p>Province: {{ user?.province }}</p>
+</app-card>
