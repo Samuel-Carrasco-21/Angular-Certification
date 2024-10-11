@@ -7,6 +7,7 @@
     "component": "ng generate component",
     "service": "ng generate service",
     "module": "ng generate module",
+    "directive": "ng generate directive",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
