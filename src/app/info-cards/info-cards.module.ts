@@ -6,6 +6,7 @@ import { ComponentsModule } from '../components/components.module';
 import { MessagesCardComponent } from './messages-card/messages-card.component';
 import { PersonalCardComponent } from './personal-card/personal-card.component';
 import { TabComponent } from './tab/tab.component';
+import { EmptyCardComponent } from './empty-card/empty-card.component';
 
 
 
@@ -15,6 +16,7 @@ import { TabComponent } from './tab/tab.component';
     InfoCardsComponent,
     MessagesCardComponent,
     PersonalCardComponent,
+    EmptyCardComponent,
     TabComponent,
   ],
   imports: [
@@ -26,6 +28,7 @@ import { TabComponent } from './tab/tab.component';
     InfoCardsComponent,
     MessagesCardComponent,
     PersonalCardComponent,
+    EmptyCardComponent,
     TabComponent,
   ],
 })

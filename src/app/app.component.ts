@@ -13,21 +13,5 @@ import { UserType } from './enums/user-type';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public user: User = {
-    id: '',
-    name: '',
-    lastName: '',
-    type: UserType.STUDENT,
-    firstTestScore: 0,
-    secondTestScore: 0,
-    finalTestScore: 0,
-    address: {
-      number: '',
-      street: '',
-      zone: ''
-    },
-    country: '',
-    province: '',
-    messages: []
-  };
+  public user: User | null = null;
 }

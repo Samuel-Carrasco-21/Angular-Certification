@@ -1,7 +1,12 @@
 <app-card [backgroundColor]="'blue'">
-  <h3 style="color: white;">Personal Information</h3>
-  <p style="color: white;">Name: {{ user?.name }}</p>
-  <p style="color: white;">Last Name: {{ user?.lastName }}</p>
-  <p style="color: white;">Type: {{ user?.type }}</p>
-  <p style="color: white;">Score: {{ this.finalScore || 'No Student'}}</p>
+  @if(!hasProjectedContent) {
+    <h3 style="color: white;">Personal Information</h3>
+    <p style="color: white;">Name: {{ user?.name }}</p>
+    <p style="color: white;">Last Name: {{ user?.lastName }}</p>
+    <p style="color: white;">Type: {{ user?.type }}</p>
+    <p style="color: white;">Score: {{ this.finalScore || 'No Student'}}</p>
+  }
+  <div #contentContainerPersonalCard>
+    <ng-content></ng-content>
+  </div>
 </app-card>

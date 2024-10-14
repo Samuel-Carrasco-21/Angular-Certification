@@ -1,6 +1,11 @@
 <app-card [backgroundColor]="'orange'">
-  <h3>Geographic Information</h3>
-  <p>Address: {{ finalAddress || 'street' }}</p>
-  <p>Country: {{ user?.country || 'country' }}</p>
-  <p>Province: {{ user?.province || 'providence' }}</p>
+  @if(!hasProjectedContent) {
+    <h3>Geographic Information</h3>
+    <p>Address: {{ finalAddress || 'street' }}</p>
+    <p>Country: {{ user?.country || 'country' }}</p>
+    <p>Province: {{ user?.province || 'providence' }}</p>
+  }
+  <div #contentContainerGeographicCard>
+    <ng-content></ng-content>
+  </div>
 </app-card>

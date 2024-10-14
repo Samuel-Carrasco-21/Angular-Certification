@@ -1,0 +1,9 @@
+<div>
+@if (selectedUser) {
+  <ng-content></ng-content>
+}@else {
+  <app-card [backgroundColor]="'transparent'">
+    No se contiene información de ningún usuario
+  </app-card>
+}
+</div>

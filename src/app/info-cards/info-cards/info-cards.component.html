@@ -2,12 +2,18 @@
 
 <div class="info-cards">
   @if (activeTab === 'personal') {
-    <app-personal-card [user]="selectedUser"></app-personal-card>
+    <app-empty-card [selectedUser]="selectedUser">
+      <app-personal-card [user]="selectedUser"></app-personal-card>
+    </app-empty-card>
   }
   @if (activeTab === 'geographic') {
-    <app-geographic-card [user]="selectedUser"></app-geographic-card>
+    <app-empty-card [selectedUser]="selectedUser">
+      <app-geographic-card [user]="selectedUser"></app-geographic-card>
+    </app-empty-card>
   }
   @if (activeTab === 'messages') {
-    <app-messages-card [user]="selectedUser"></app-messages-card>
+    <app-empty-card [selectedUser]="selectedUser">
+      <app-messages-card [user]="selectedUser"></app-messages-card>
+    </app-empty-card>
   }
 </div>
