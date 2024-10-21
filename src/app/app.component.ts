@@ -12,6 +12,7 @@ import { Class10102024Component } from './components/class-10-10-2024/class-10-1
 import { Class11102024Component } from './components/class-11-10-2024/class-11-10-2024/class-11-10-2024.component';
 import { Class14102024Component } from './components/class-14-10-2024/class-14-10-2024/class-14-10-2024.component';
 import { Class16102024Component } from './components/class-16-10-2024/class-16-10-2024/class-16-10-2024.component';
+import { Class17102024Component } from './components/class-17-10-2024/class-17-10-2024/class-17-10-2024.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { Class16102024Component } from './components/class-16-10-2024/class-16-1
     Class11102024Component,
     Class14102024Component,
     Class16102024Component,
+    Class17102024Component,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -39,6 +41,6 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/class-16-10-2024/page-one']);
+    this.router.navigate(['/class-17-10-2024']);
   }
 }
