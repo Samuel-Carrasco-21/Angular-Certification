@@ -4,6 +4,7 @@ import { ScoreComponent } from './score/score.component';
 import { AverageComponent } from './average/average.component';
 import { ClassmateComponent } from './classmate/classmate.component';
 import { NormalComponent } from './normal/normal.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,11 @@ const routes: Routes = [
     path: 'normal',
     component: NormalComponent,
   },
-
+  {
+    path: 'users/:id',
+    component: UserCardComponent,
+    title: 'my user card test tilte',
+  }
 ];
 
 @NgModule({

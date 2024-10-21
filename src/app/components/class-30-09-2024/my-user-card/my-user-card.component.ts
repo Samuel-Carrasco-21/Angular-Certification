@@ -8,9 +8,9 @@ import { IPerson } from '../../../models/person';
   templateUrl: './my-user-card.component.html',
   styleUrl: './my-user-card.component.scss'
 })
-export class MyUserCardComponent implements OnChanges{
+export class MyUserCardComponent implements OnChanges {
   @Input() person!: IPerson;
-  public valueChanged:string = 'empty';
+  public valueChanged: string = 'empty';
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('Changes Gotten: ', changes);

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-class-17-10-2024',
@@ -9,5 +9,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './class-17-10-2024.component.scss'
 })
 export class Class17102024Component {
+  constructor(private router: Router) { }
 
+  public accessMyUser() {
+    this.router.navigate(['/class-17-10-2024/users', 1]);
+  }
 }
