@@ -5,8 +5,9 @@ import { NotificationListComponent } from './notification-list/notification-list
 import { SocialNetworkCardComponent } from './social-network-card/social-network-card.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { SocialComponent } from './social/social.component';
 
-const arrayComponents = [NotificationCardComponent, NotificationListComponent, SocialNetworkCardComponent, UserCardComponent, UserListComponent];
+const arrayComponents = [NotificationCardComponent, NotificationListComponent, SocialNetworkCardComponent, UserCardComponent, UserListComponent, SocialComponent];
 
 @NgModule({
   declarations: arrayComponents,

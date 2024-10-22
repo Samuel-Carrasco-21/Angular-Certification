@@ -16,6 +16,10 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     UserRoutingModule,
     ComponentsModule,
-  ]
+  ],
+  exports: [
+    InfoUserPageComponent,
+    UsersPageComponent,
+  ],
 })
 export class UserModule { }

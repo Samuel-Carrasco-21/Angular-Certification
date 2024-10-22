@@ -1,1 +1,12 @@
-<p>user-card works!</p>
+<div class="p-4 border rounded-lg shadow-md bg-white">
+  <h2 class="text-lg font-semibold mb-2">{{ user.name }}</h2>
+  <p>Age: {{ user.age }}</p>
+  <p [ngClass]="statusClass">Status: {{ user.status }}</p>
+  <div class="my-4">
+    <span class="font-medium">Subscription type:</span>
+    <span class="px-2 py-1 rounded-full" [ngClass]="{'bg-green-400 text-white': isPremium, 'bg-gray-300': !isPremium}">
+      {{ user.subscriptionType | uppercase }}
+    </span>
+  </div>
+  <p>Amount available: {{ user.amountAvailable }}$</p>
+</div>
