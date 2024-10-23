@@ -14,4 +14,8 @@ export class Class22102024Component {
   public onCalculator() {
     this.router.navigate(['/class-22-10-2024/calculator'], { queryParams: { name: 'John', age: 20 } })
   }
+
+  public goTemplateDrivenForm() {
+    this.router.navigate(['/class-22-10-2024/template-driven-form']);
+  }
 }

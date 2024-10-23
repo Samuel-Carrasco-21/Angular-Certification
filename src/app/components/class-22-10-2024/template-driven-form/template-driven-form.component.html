@@ -1,0 +1,16 @@
+<form #testForm="ngForm" class="bg-slate-200 w-max p-2 m-2 flex flex-col" (ngSubmit)="onSubmit(testForm)">
+  <p>name</p>
+  <input type="text" ngModel name="nameF">
+  <p>lastName</p>
+  <input type="text" ngModel name="lastNameF">
+  <p>age</p>
+  <input type="text" ngModel name="ageF">
+  <p>city</p>
+  <input type="text" ngModel name="cityF">
+  <p>phone</p>
+  <input type="text" ngModel name="phoneF">
+  <div class="flex flex-col w-max">
+    <button type="submit" class="bg-green-300 text-white rounded-lg p-2 my-1 mt-3">send data</button>
+    <button type="reset" class="bg-red-300 text-white rounded-lg p-2 my-1">reset</button>
+  </div>
+</form>
