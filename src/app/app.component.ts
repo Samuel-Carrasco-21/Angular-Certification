@@ -14,6 +14,7 @@ import { Class14102024Component } from './components/class-14-10-2024/class-14-1
 import { Class16102024Component } from './components/class-16-10-2024/class-16-10-2024/class-16-10-2024.component';
 import { Class17102024Component } from './components/class-17-10-2024/class-17-10-2024/class-17-10-2024.component';
 import { Class22102024Component } from './components/class-22-10-2024/class-22-10-2024/class-22-10-2024.component';
+import { Class23102024Component } from './components/class-23-10-2024/class-23-10-2024/class-23-10-2024.component';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ import { Class22102024Component } from './components/class-22-10-2024/class-22-1
     Class16102024Component,
     Class17102024Component,
     Class22102024Component,
+    Class23102024Component,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

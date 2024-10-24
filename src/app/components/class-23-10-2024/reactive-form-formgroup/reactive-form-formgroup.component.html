@@ -1,0 +1,117 @@
+<div class="space-y-8">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <p class="text-xl font-semibold text-gray-800">FORM GROUP</p>
+    <form [formGroup]="studentForm" class="space-y-4">
+      <div>
+        <p class="font-medium text-gray-700">Name</p>
+        <input
+          type="text"
+          [formControlName]="'name'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your name"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">Score</p>
+        <input
+          type="text"
+          [formControlName]="'score'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your score"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">School</p>
+        <input
+          type="text"
+          [formControlName]="'school'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your school"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">Professor</p>
+        <input
+          type="text"
+          [formControlName]="'proffesor'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter professor's name"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">University</p>
+        <input
+          type="text"
+          [formControlName]="'university'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your university"
+        >
+      </div>
+    </form>
+    <button
+      (click)="onSendData()"
+      [disabled]="studentForm.invalid"
+      class="mt-4 bg-blue-500 text-white font-semibold rounded-md py-2 w-full hover:bg-blue-600 transition duration-200 disabled:bg-gray-400"
+    >
+      Send Data
+    </button>
+  </div>
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <p class="text-xl font-semibold text-gray-800">FORM GROUP 2</p>
+    <form [formGroup]="student2Form" class="space-y-4">
+      <div>
+        <p class="font-medium text-gray-700">Name</p>
+        <input
+          type="text"
+          [formControlName]="'name'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your name"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">Score</p>
+        <input
+          type="text"
+          [formControlName]="'score'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your score"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">School</p>
+        <input
+          type="text"
+          [formControlName]="'school'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your school"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">Professor</p>
+        <input
+          type="text"
+          [formControlName]="'proffesor'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter professor's name"
+        >
+      </div>
+      <div>
+        <p class="font-medium text-gray-700">University</p>
+        <input
+          type="text"
+          [formControlName]="'university'"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+          placeholder="Enter your university"
+        >
+      </div>
+    </form>
+    <button
+      (click)="onSendData2()"
+      [disabled]="student2Form.invalid"
+      class="mt-4 bg-blue-500 text-white font-semibold rounded-md py-2 w-full hover:bg-blue-600 transition duration-200 disabled:bg-gray-400"
+    >
+      Send Data
+    </button>
+  </div>
+</div>
