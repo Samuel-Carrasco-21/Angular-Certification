@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validator
 @Component({
   selector: 'app-reactive-form-formgroup',
   templateUrl: './reactive-form-formgroup.component.html',
-  styleUrl: './reactive-form-formgroup.component.scss'
+  styleUrls: ['./reactive-form-formgroup.component.scss']
 })
 export class ReactiveFormFormgroupComponent {
   public studentForm!: FormGroup;
@@ -28,18 +28,26 @@ export class ReactiveFormFormgroupComponent {
       school: [''],
       proffesor: [''],
       university: ['']
-    })
+    });
 
     this.studentForm.valueChanges.subscribe((res) => {
-      console.log('FORM GROUP OBSERVABLE: ', res)
+      console.log('FORM GROUP OBSERVABLE: ', res);
     });
   }
 
   public onSendData() {
-    console.log('FORM GROUP: ', this.studentForm)
+    console.log('FORM GROUP: ', this.studentForm.value);
   }
 
   public onSendData2() {
-    console.log('FORM GROUP 2: ', this.student2Form)
+    console.log('FORM GROUP 2: ', this.student2Form.value);
+  }
+
+  public print() {
+    console.log('FORM NAME: ', this.studentForm.get('name')?.value);
+  }
+
+  public onSubmit(data: any) {
+    console.log('TEMPLATE DRIVEN FORM: ', data);
   }
 }

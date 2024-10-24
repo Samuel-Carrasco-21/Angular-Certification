@@ -9,7 +9,10 @@
           [formControlName]="'name'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your name"
-        >
+        />
+        <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched" class="text-red-500 mt-1">
+          Name is required
+        </div>
       </div>
       <div>
         <p class="font-medium text-gray-700">Score</p>
@@ -18,7 +21,7 @@
           [formControlName]="'score'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your score"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">School</p>
@@ -27,7 +30,7 @@
           [formControlName]="'school'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your school"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">Professor</p>
@@ -36,7 +39,7 @@
           [formControlName]="'proffesor'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter professor's name"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">University</p>
@@ -45,7 +48,7 @@
           [formControlName]="'university'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your university"
-        >
+        />
       </div>
     </form>
     <button
@@ -67,7 +70,10 @@
           [formControlName]="'name'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your name"
-        >
+        />
+        <div *ngIf="student2Form.get('name')?.invalid && student2Form.get('name')?.touched" class="text-red-500 mt-1">
+          Name is required
+        </div>
       </div>
       <div>
         <p class="font-medium text-gray-700">Score</p>
@@ -76,7 +82,7 @@
           [formControlName]="'score'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your score"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">School</p>
@@ -85,7 +91,7 @@
           [formControlName]="'school'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your school"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">Professor</p>
@@ -94,7 +100,7 @@
           [formControlName]="'proffesor'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter professor's name"
-        >
+        />
       </div>
       <div>
         <p class="font-medium text-gray-700">University</p>
@@ -103,7 +109,7 @@
           [formControlName]="'university'"
           class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
           placeholder="Enter your university"
-        >
+        />
       </div>
     </form>
     <button
@@ -114,4 +120,61 @@
       Send Data
     </button>
   </div>
+
+  <form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)" class="bg-white p-6 rounded-lg shadow-md space-y-4">
+    <div>
+      <p class="font-medium text-gray-700">Name</p>
+      <input
+        type="text"
+        #nameT="ngModel"
+        name="nameF"
+        ngModel
+        required
+        class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+        placeholder="Enter your name"
+      />
+      <div *ngIf="nameT.invalid && nameT.touched" class="text-red-500 mt-1">
+        THERE IS AN ERROR
+      </div>
+      <p class="text-gray-500 text-sm">{{ nameT.invalid | json }}</p>
+      <p class="text-gray-500 text-sm">{{ nameT.touched | json }}</p>
+    </div>
+
+    <div>
+      <p class="font-medium text-gray-700">Last Name</p>
+      <input
+        type="text"
+        ngModel
+        name="lastNameF"
+        class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+        placeholder="Enter your last name"
+      />
+    </div>
+
+    <div>
+      <p class="font-medium text-gray-700">Age</p>
+      <input
+        type="text"
+        ngModel
+        name="ageF"
+        class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
+        placeholder="Enter your age"
+      />
+    </div>
+
+    <div class="flex justify-between">
+      <button
+        type="submit"
+        class="bg-blue-500 text-white font-semibold rounded-md py-2 w-1/2 hover:bg-blue-600 transition duration-200"
+      >
+        Send Data
+      </button>
+      <button
+        type="reset"
+        class="bg-gray-300 text-gray-700 font-semibold rounded-md py-2 w-1/2 hover:bg-gray-400 transition duration-200"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
 </div>
