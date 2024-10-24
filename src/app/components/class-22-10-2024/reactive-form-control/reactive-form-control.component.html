@@ -1,0 +1,15 @@
+<form #testForm="ngForm" class="flex flex-col space-y-4 p-4 border border-gray-300 rounded-lg shadow-lg">
+  <p class="text-lg font-semibold text-gray-700">REACTIVE FORM</p>
+  <input
+    type="text"
+    [formControl]="scoreControl"
+    class="border border-gray-400 rounded-md p-2 focus:outline-none focus:border-blue-500"
+    placeholder="Enter score"
+  >
+  <button
+    (click)="onPrintScore()"
+    class="bg-blue-500 text-white font-semibold rounded-md py-2 hover:bg-blue-600 transition duration-200"
+  >
+    Print Score
+  </button>
+</form>

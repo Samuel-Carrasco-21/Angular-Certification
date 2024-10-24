@@ -18,4 +18,8 @@ export class Class22102024Component {
   public goTemplateDrivenForm() {
     this.router.navigate(['/class-22-10-2024/template-driven-form']);
   }
+
+  public goReactiveForm() {
+    this.router.navigate(['/class-22-10-2024/reactive-form-control']);
+  }
 }
